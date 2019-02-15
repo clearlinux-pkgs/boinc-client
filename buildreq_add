@@ -1,5 +1,6 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+docbook2X
 nghttp2-dev
 wxWidgets
 wxWidgets-dev
