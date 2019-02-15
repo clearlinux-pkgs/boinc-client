@@ -1,0 +1,7 @@
+--disable-silent-rules
+--enable-dynamic-client-linkage
+--disable-server
+--disable-fcgi
+--enable-unicode
+--with-ssl
+--with-x

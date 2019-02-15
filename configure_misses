@@ -1,0 +1,55 @@
+Configure miss: x86_64-generic-linux-gnu-objc++
+Configure miss: x86_64-generic-linux-gnu-objcxx
+Configure miss: x86_64-generic-linux-gnu-CXX
+Configure miss: whether we are using the GNU Objective C++ compiler
+Configure miss: whether /usr/lib64/ccache/bin/g++ accepts -g
+Configure miss: docbook2x-man
+Configure miss: whether we are compiling for cygwin
+Configure miss: if /usr/bin/gfortran static flag -static works
+Configure miss: shmget in dynamic library cygipc
+Configure miss: aio_fork in dynamic library aio
+Configure miss: bind in static library socket
+Configure miss: bind in dynamic library socket
+Configure miss: md5_finish in dynamic library cups
+Configure miss: whether we are using the Microsoft C compiler
+Configure miss: OpenGL Utility library
+Configure miss: GLUT library
+Configure miss: sys/vmmeter.h usability
+Configure miss: sys/vmmeter.h presence
+Configure miss: sys/vmmeter.h
+Configure miss: procfs.h usability
+Configure miss: procfs.h presence
+Configure miss: procfs.h
+Configure miss: sal.h usability
+Configure miss: sal.h presence
+Configure miss: sal.h
+Configure miss: intrin.h usability
+Configure miss: intrin.h presence
+Configure miss: intrin.h
+Configure miss: avxintrin.h usability
+Configure miss: avxintrin.h presence
+Configure miss: avxintrin.h
+Configure miss: whether xgetbv is declared
+Configure miss: whether __xgetbv is declared
+Configure miss: whether cpuid is declared
+Configure miss: whether _cpuid is declared
+Configure miss: whether __cpuid is declared
+Configure miss: nvapi.h
+Configure miss: sys/sensors.h
+Configure miss: struct lifconf
+Configure miss: struct lifreq
+Configure miss: whether largefile support breaks C++
+Configure miss: getisax
+Configure miss: _strdup
+Configure miss: strdupa
+Configure miss: _strdupa
+Configure miss: res_init
+Configure miss: _configthreadlocale
+Configure miss: whether _fpreset is declared
+Configure miss: whether fpreset is declared
+Configure miss: wxWidgets static library
+Configure miss: wxWidgets static library
+Configure miss: dynamic library nvapi
+Configure miss: res_init in -lresolv
+Configure miss: res_query in static library resolv
+Configure miss: res_query in dynamic library resolv

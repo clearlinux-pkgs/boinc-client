@@ -1,0 +1,9 @@
+7.14.2
+freeglut-dev
+gfortran
+libXScrnSaver-dev
+mesa-dev
+openssl-dev
+pkgconfig(xmu)
+sqlite-autoconf-dev
+wxGTK-dev
