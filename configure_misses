@@ -3,7 +3,6 @@ Configure miss: x86_64-generic-linux-gnu-objcxx
 Configure miss: x86_64-generic-linux-gnu-CXX
 Configure miss: whether we are using the GNU Objective C++ compiler
 Configure miss: whether /usr/lib64/ccache/bin/g++ accepts -g
-Configure miss: docbook2x-man
 Configure miss: whether we are compiling for cygwin
 Configure miss: if /usr/bin/gfortran static flag -static works
 Configure miss: shmget in dynamic library cygipc

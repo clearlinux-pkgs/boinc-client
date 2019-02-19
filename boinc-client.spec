@@ -4,7 +4,7 @@
 #
 Name     : boinc-client
 Version  : 7.14.2
-Release  : 2
+Release  : 3
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Summary  : No detailed summary available
@@ -14,9 +14,12 @@ Requires: boinc-client-bin = %{version}-%{release}
 Requires: boinc-client-lib = %{version}-%{release}
 Requires: boinc-client-license = %{version}-%{release}
 Requires: boinc-client-locales = %{version}-%{release}
+Requires: boinc-client-man = %{version}-%{release}
 Requires: boinc-client-services = %{version}-%{release}
 BuildRequires : automake
 BuildRequires : automake-dev
+BuildRequires : docbook-utils
+BuildRequires : docbook-xml
 BuildRequires : docbook2X
 BuildRequires : freeglut-dev
 BuildRequires : gettext-bin
@@ -24,10 +27,14 @@ BuildRequires : gfortran
 BuildRequires : libXScrnSaver-dev
 BuildRequires : libtool
 BuildRequires : libtool-dev
+BuildRequires : libxslt
 BuildRequires : m4
 BuildRequires : mesa-dev
 BuildRequires : nghttp2-dev
 BuildRequires : openssl-dev
+BuildRequires : perl(XML::NamespaceSupport)
+BuildRequires : perl(XML::SAX::Exception)
+BuildRequires : perl(XML::SAX::ParserFactory)
 BuildRequires : pkg-config-dev
 BuildRequires : pkgconfig(gtk+-3.0)
 BuildRequires : pkgconfig(libcurl)
@@ -53,6 +60,7 @@ Date of recent version: November 4, 2002
 Summary: bin components for the boinc-client package.
 Group: Binaries
 Requires: boinc-client-license = %{version}-%{release}
+Requires: boinc-client-man = %{version}-%{release}
 Requires: boinc-client-services = %{version}-%{release}
 
 %description bin
@@ -95,6 +103,14 @@ Group: Default
 locales components for the boinc-client package.
 
 
+%package man
+Summary: man components for the boinc-client package.
+Group: Default
+
+%description man
+man components for the boinc-client package.
+
+
 %package services
 Summary: services components for the boinc-client package.
 Group: Systemd services
@@ -112,8 +128,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550271660
-%reconfigure --disable-static --disable-silent-rules \
+export SOURCE_DATE_EPOCH=1550606675
+%reconfigure --disable-static DOCBOOK2X_MAN='/usr/bin/db2x_xsltproc -s man $< -o $(patsubst %.xml,%.mxml,$<); db2x_manxml $(patsubst %.xml,%.mxml,$<); echo' \
+--disable-silent-rules \
 --enable-dynamic-client-linkage \
 --disable-server \
 --disable-fcgi \
@@ -130,7 +147,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550271660
+export SOURCE_DATE_EPOCH=1550606675
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp COPYING %{buildroot}/usr/share/package-licenses/boinc-client/COPYING
@@ -251,6 +268,12 @@ cp samples/wrappture/license.terms %{buildroot}/usr/share/package-licenses/boinc
 /usr/share/package-licenses/boinc-client/drupal_sites_default_boinc_modules_node_comment_block_LICENSE.txt
 /usr/share/package-licenses/boinc-client/html_inc_random_compat_LICENSE
 /usr/share/package-licenses/boinc-client/samples_wrappture_license.terms
+
+%files man
+%defattr(0644,root,root,0755)
+/usr/share/man/man1/boinc.1
+/usr/share/man/man1/boinccmd.1
+/usr/share/man/man1/boincmgr.1
 
 %files services
 %defattr(-,root,root,-)

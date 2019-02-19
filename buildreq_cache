@@ -4,6 +4,9 @@ gfortran
 libXScrnSaver-dev
 mesa-dev
 openssl-dev
+perl(XML::NamespaceSupport)
+perl(XML::SAX::Exception)
+perl(XML::SAX::ParserFactory)
 pkgconfig(xmu)
 sqlite-autoconf-dev
 wxGTK-dev

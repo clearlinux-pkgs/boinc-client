@@ -1,3 +1,4 @@
+DOCBOOK2X_MAN='/usr/bin/db2x_xsltproc -s man $< -o $(patsubst %.xml,%.mxml,$<); db2x_manxml $(patsubst %.xml,%.mxml,$<); echo'
 --disable-silent-rules
 --enable-dynamic-client-linkage
 --disable-server
