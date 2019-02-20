@@ -7,10 +7,12 @@ Version  : 7.14.2
 Release  : 5
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
+Source1  : boinc-client.tmpfiles
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT NCSA OFL-1.1
 Requires: boinc-client-bin = %{version}-%{release}
+Requires: boinc-client-config = %{version}-%{release}
 Requires: boinc-client-data = %{version}-%{release}
 Requires: boinc-client-lib = %{version}-%{release}
 Requires: boinc-client-license = %{version}-%{release}
@@ -59,12 +61,21 @@ Patch2: 0002-Add-boinc-manager.desktop.patch
 Summary: bin components for the boinc-client package.
 Group: Binaries
 Requires: boinc-client-data = %{version}-%{release}
+Requires: boinc-client-config = %{version}-%{release}
 Requires: boinc-client-license = %{version}-%{release}
 Requires: boinc-client-man = %{version}-%{release}
 Requires: boinc-client-services = %{version}-%{release}
 
 %description bin
 bin components for the boinc-client package.
+
+
+%package config
+Summary: config components for the boinc-client package.
+Group: Default
+
+%description config
+config components for the boinc-client package.
 
 
 %package data
@@ -140,7 +151,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550626375
+export SOURCE_DATE_EPOCH=1550683511
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %reconfigure --disable-static DOCBOOK2X_MAN='/usr/bin/db2x_xsltproc -s man $< -o $(patsubst %.xml,%.mxml,$<); db2x_manxml $(patsubst %.xml,%.mxml,$<); echo' \
 --disable-silent-rules \
@@ -160,7 +171,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550626375
+export SOURCE_DATE_EPOCH=1550683511
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp COPYING %{buildroot}/usr/share/package-licenses/boinc-client/COPYING
@@ -190,6 +201,8 @@ cp samples/wrappture/license.terms %{buildroot}/usr/share/package-licenses/boinc
 %make_install
 %find_lang BOINC-Client
 %find_lang BOINC-Manager
+mkdir -p %{buildroot}/usr/lib/tmpfiles.d
+install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/boinc-client.conf
 ## install_append content
 install -D -m644 boinc-manager.desktop %{buildroot}/usr/share/applications/boinc-manager.desktop
 for fullname in packages/generic/sea/boincmgr.[0-9]*x[0-9]*.png; do
@@ -209,6 +222,10 @@ done
 /usr/bin/boincmgr
 /usr/bin/boincscr
 /usr/bin/switcher
+
+%files config
+%defattr(-,root,root,-)
+/usr/lib/tmpfiles.d/boinc-client.conf
 
 %files data
 %defattr(-,root,root,-)
