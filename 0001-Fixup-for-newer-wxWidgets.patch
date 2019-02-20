@@ -1,7 +1,7 @@
 From 4621e5b9bf85c12b5b1e3861440d0b36e9a95dd5 Mon Sep 17 00:00:00 2001
 From: "Brett T. Warden" <brett.t.warden@intel.com>
 Date: Fri, 15 Feb 2019 10:26:59 -0800
-Subject: [PATCH] Fixup for newer wxWidgets
+Subject: [PATCH 1/2] Fixup for newer wxWidgets
 
 ---
  configure.ac | 2 +-

@@ -1,0 +1,6 @@
+install -D -m644 boinc-manager.desktop %{buildroot}/usr/share/applications/boinc-manager.desktop
+
+for fullname in packages/generic/sea/boincmgr.[0-9]*x[0-9]*.png; do
+	IFS=. read prog res ext <<< $(basename ${fullname})
+	install -D -m644 "${fullname}" %{buildroot}/usr/share/icons/hicolor/${res}/${prog}.${ext}
+done

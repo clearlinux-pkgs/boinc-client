@@ -11,6 +11,7 @@ Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT NCSA OFL-1.1
 Requires: boinc-client-bin = %{version}-%{release}
+Requires: boinc-client-data = %{version}-%{release}
 Requires: boinc-client-lib = %{version}-%{release}
 Requires: boinc-client-license = %{version}-%{release}
 Requires: boinc-client-locales = %{version}-%{release}
@@ -48,6 +49,7 @@ BuildRequires : sqlite-autoconf-dev
 BuildRequires : wxWidgets
 BuildRequires : wxWidgets-dev
 Patch1: 0001-Fixup-for-newer-wxWidgets.patch
+Patch2: 0002-Add-boinc-manager.desktop.patch
 
 %description
 # Status
@@ -56,6 +58,7 @@ Patch1: 0001-Fixup-for-newer-wxWidgets.patch
 %package bin
 Summary: bin components for the boinc-client package.
 Group: Binaries
+Requires: boinc-client-data = %{version}-%{release}
 Requires: boinc-client-license = %{version}-%{release}
 Requires: boinc-client-man = %{version}-%{release}
 Requires: boinc-client-services = %{version}-%{release}
@@ -64,11 +67,20 @@ Requires: boinc-client-services = %{version}-%{release}
 bin components for the boinc-client package.
 
 
+%package data
+Summary: data components for the boinc-client package.
+Group: Data
+
+%description data
+data components for the boinc-client package.
+
+
 %package dev
 Summary: dev components for the boinc-client package.
 Group: Development
 Requires: boinc-client-lib = %{version}-%{release}
 Requires: boinc-client-bin = %{version}-%{release}
+Requires: boinc-client-data = %{version}-%{release}
 Provides: boinc-client-devel = %{version}-%{release}
 Requires: boinc-client = %{version}-%{release}
 
@@ -79,6 +91,7 @@ dev components for the boinc-client package.
 %package lib
 Summary: lib components for the boinc-client package.
 Group: Libraries
+Requires: boinc-client-data = %{version}-%{release}
 Requires: boinc-client-license = %{version}-%{release}
 
 %description lib
@@ -120,13 +133,15 @@ services components for the boinc-client package.
 %prep
 %setup -q -n boinc-client_release-7.14-7.14.2
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550761294
+export SOURCE_DATE_EPOCH=1550626375
+export LDFLAGS="${LDFLAGS} -fno-lto"
 %reconfigure --disable-static DOCBOOK2X_MAN='/usr/bin/db2x_xsltproc -s man $< -o $(patsubst %.xml,%.mxml,$<); db2x_manxml $(patsubst %.xml,%.mxml,$<); echo' \
 --disable-silent-rules \
 --enable-dynamic-client-linkage \
@@ -145,7 +160,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550761294
+export SOURCE_DATE_EPOCH=1550626375
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp COPYING %{buildroot}/usr/share/package-licenses/boinc-client/COPYING
@@ -175,6 +190,13 @@ cp samples/wrappture/license.terms %{buildroot}/usr/share/package-licenses/boinc
 %make_install
 %find_lang BOINC-Client
 %find_lang BOINC-Manager
+## install_append content
+install -D -m644 boinc-manager.desktop %{buildroot}/usr/share/applications/boinc-manager.desktop
+for fullname in packages/generic/sea/boincmgr.[0-9]*x[0-9]*.png; do
+IFS=. read prog res ext <<< $(basename ${fullname})
+install -D -m644 "${fullname}" %{buildroot}/usr/share/icons/hicolor/${res}/${prog}.${ext}
+done
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -187,6 +209,13 @@ cp samples/wrappture/license.terms %{buildroot}/usr/share/package-licenses/boinc
 /usr/bin/boincmgr
 /usr/bin/boincscr
 /usr/bin/switcher
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/applications/boinc-manager.desktop
+/usr/share/icons/hicolor/16x16/boincmgr.png
+/usr/share/icons/hicolor/32x32/boincmgr.png
+/usr/share/icons/hicolor/48x48/boincmgr.png
 
 %files dev
 %defattr(-,root,root,-)
