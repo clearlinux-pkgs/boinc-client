@@ -2,6 +2,7 @@
 freeglut-dev
 gfortran
 libXScrnSaver-dev
+libaio-dev
 mesa-dev
 openssl-dev
 perl(XML::NamespaceSupport)
