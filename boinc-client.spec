@@ -4,7 +4,7 @@
 #
 Name     : boinc-client
 Version  : 7.14.2
-Release  : 5
+Release  : 6
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source1  : boinc-client.tmpfiles
@@ -54,8 +54,13 @@ Patch1: 0001-Fixup-for-newer-wxWidgets.patch
 Patch2: 0002-Add-boinc-manager.desktop.patch
 
 %description
-# Status
-[![Build Status](https://travis-ci.org/BOINC/boinc.svg?branch=master)](https://travis-ci.org/BOINC/boinc) [![Build status](https://ci.appveyor.com/api/projects/status/9dgoc9h5ppos8vcy/branch/master?svg=true)](https://ci.appveyor.com/project/BOINC/boinc/branch/master) [![Coverity Scan Build Status](https://scan.coverity.com/projects/4226/badge.svg)](https://scan.coverity.com/projects/boinc-boinc) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/BOINC/boinc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/BOINC/boinc/?branch=master)
+Stripchart version 2.0
+----------------------
+Author: Matt Lebofsky
+BOINC/SETI@home - University of California, Berkeley
+mattl@ssl.berkeley.edu
+
+Date of recent version: November 4, 2002
 
 %package bin
 Summary: bin components for the boinc-client package.
@@ -93,7 +98,6 @@ Requires: boinc-client-lib = %{version}-%{release}
 Requires: boinc-client-bin = %{version}-%{release}
 Requires: boinc-client-data = %{version}-%{release}
 Provides: boinc-client-devel = %{version}-%{release}
-Requires: boinc-client = %{version}-%{release}
 
 %description dev
 dev components for the boinc-client package.
@@ -151,7 +155,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550683511
+export SOURCE_DATE_EPOCH=1550788823
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %reconfigure --disable-static DOCBOOK2X_MAN='/usr/bin/db2x_xsltproc -s man $< -o $(patsubst %.xml,%.mxml,$<); db2x_manxml $(patsubst %.xml,%.mxml,$<); echo' \
 --disable-silent-rules \
@@ -171,7 +175,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550683511
+export SOURCE_DATE_EPOCH=1550788823
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp COPYING %{buildroot}/usr/share/package-licenses/boinc-client/COPYING
