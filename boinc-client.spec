@@ -4,7 +4,7 @@
 #
 Name     : boinc-client
 Version  : 7.14.2
-Release  : 7
+Release  : 8
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source1  : boinc-client.tmpfiles
@@ -155,7 +155,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550853305
+export SOURCE_DATE_EPOCH=1550864559
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %reconfigure --disable-static DOCBOOK2X_MAN='/usr/bin/db2x_xsltproc -s man $< -o $(patsubst %.xml,%.mxml,$<); db2x_manxml $(patsubst %.xml,%.mxml,$<); echo' \
 --disable-silent-rules \
@@ -175,7 +175,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550853305
+export SOURCE_DATE_EPOCH=1550864559
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp COPYING %{buildroot}/usr/share/package-licenses/boinc-client/COPYING
@@ -211,7 +211,7 @@ install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/boinc-client.conf
 install -D -m644 boinc-manager.desktop %{buildroot}/usr/share/applications/boinc-manager.desktop
 for fullname in packages/generic/sea/boincmgr.[0-9]*x[0-9]*.png; do
 IFS=. read prog res ext <<< $(basename ${fullname})
-install -D -m644 "${fullname}" %{buildroot}/usr/share/icons/hicolor/${res}/${prog}.${ext}
+install -D -m644 "${fullname}" %{buildroot}/usr/share/icons/hicolor/${res}/apps/${prog}.${ext}
 done
 ## install_append end
 
@@ -234,9 +234,9 @@ done
 %files data
 %defattr(-,root,root,-)
 /usr/share/applications/boinc-manager.desktop
-/usr/share/icons/hicolor/16x16/boincmgr.png
-/usr/share/icons/hicolor/32x32/boincmgr.png
-/usr/share/icons/hicolor/48x48/boincmgr.png
+/usr/share/icons/hicolor/16x16/apps/boincmgr.png
+/usr/share/icons/hicolor/32x32/apps/boincmgr.png
+/usr/share/icons/hicolor/48x48/apps/boincmgr.png
 
 %files dev
 %defattr(-,root,root,-)
