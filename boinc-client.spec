@@ -4,7 +4,7 @@
 #
 Name     : boinc-client
 Version  : 7.14.2
-Release  : 10
+Release  : 11
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.14/7.14.2.tar.gz
 Source1  : boinc-client.tmpfiles
@@ -21,7 +21,6 @@ Requires: boinc-client-man = %{version}-%{release}
 Requires: boinc-client-services = %{version}-%{release}
 BuildRequires : automake
 BuildRequires : automake-dev
-BuildRequires : buildreq-mvn
 BuildRequires : cups-dev
 BuildRequires : docbook-utils
 BuildRequires : docbook-xml
@@ -29,7 +28,6 @@ BuildRequires : docbook2X
 BuildRequires : freeglut-dev
 BuildRequires : gettext-bin
 BuildRequires : gfortran
-BuildRequires : gradle
 BuildRequires : libXScrnSaver-dev
 BuildRequires : libaio-dev
 BuildRequires : libtool
@@ -158,7 +156,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572646249
+export SOURCE_DATE_EPOCH=1582911268
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -182,7 +180,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1572646249
+export SOURCE_DATE_EPOCH=1582911268
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp %{_builddir}/boinc-client_release-7.14-7.14.2/COPYING %{buildroot}/usr/share/package-licenses/boinc-client/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -218,6 +216,7 @@ mkdir -p %{buildroot}/usr/lib/tmpfiles.d
 install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/boinc-client.conf
 ## install_append content
 install -D -m644 boinc-manager.desktop %{buildroot}/usr/share/applications/boinc-manager.desktop
+
 for fullname in packages/generic/sea/boincmgr.[0-9]*x[0-9]*.png; do
 IFS=. read prog res ext <<< $(basename ${fullname})
 install -D -m644 "${fullname}" %{buildroot}/usr/share/icons/hicolor/${res}/apps/${prog}.${ext}
