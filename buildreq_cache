@@ -1,13 +1,10 @@
-7.14.2
+7.16.5
 freeglut-dev
-gfortran
 libXScrnSaver-dev
 libaio-dev
-mesa-dev
 openssl-dev
 perl(XML::NamespaceSupport)
 perl(XML::SAX::Exception)
 perl(XML::SAX::ParserFactory)
 pkgconfig(xmu)
 sqlite-autoconf-dev
-wxGTK-dev
