@@ -1,0 +1,1 @@
+regex = ^client_release/[0-9.]+/([0-9.]+)$
