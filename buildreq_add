@@ -1,10 +1,19 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+cups-dev
 docbook-utils
 docbook-xml
 docbook2X
+freeglut-dev
+libXScrnSaver-dev
+libaio-dev
 libxslt
 nghttp2-dev
+openssl-dev
+perl(XML::NamespaceSupport)
+perl(XML::SAX::Exception)
+perl(XML::SAX::ParserFactory)
+pkgconfig(xmu)
+sqlite-autoconf-dev
 wxWidgets
 wxWidgets-dev
-cups-dev
