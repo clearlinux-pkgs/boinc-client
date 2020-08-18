@@ -15,8 +15,8 @@ index b961244..fab4151 100644
      CLIENTGUIFLAGS="${CLIENTGUIFLAGS} -DNDEBUG"
  fi
  
--CLIENTGUILIBS="${WX_LIBS} ${SQLITE3_LIBS}"
-+CLIENTGUILIBS="${WX_LIBS} $($WX_CONFIG_WITH_ARGS --libs webview) ${SQLITE3_LIBS}"
+-CLIENTGUILIBS="${WX_LIBS}"
++CLIENTGUILIBS="${WX_LIBS} $($WX_CONFIG_WITH_ARGS --libs webview)"
  
  if test "${enable_client_release}" = "yes" ; then
     if test "x${WX_LIBS_STATIC}" = "x" ; then

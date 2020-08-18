@@ -11,7 +11,6 @@ libgtk-3.so.0
 libm.so.6
 libnotify.so.4
 libpthread.so.0
-libsqlite3.so.0
 libssl.so.1.1
 libstdc++.so.6
 libwx_baseu-3.1.so.4
