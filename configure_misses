@@ -1,7 +1,8 @@
+Configure miss: g++ option to enable C++11 features
 Configure miss: x86_64-generic-linux-gnu-objc++
 Configure miss: x86_64-generic-linux-gnu-objcxx
 Configure miss: x86_64-generic-linux-gnu-CXX
-Configure miss: whether we are using the GNU Objective C++ compiler
+Configure miss: whether the compiler supports GNU Objective C++
 Configure miss: whether /usr/lib64/ccache/bin/g++ accepts -g
 Configure miss: whether we are compiling for cygwin
 Configure miss: shmget in dynamic library cygipc
@@ -12,21 +13,12 @@ Configure miss: md5_finish in dynamic library cups
 Configure miss: whether we are using the Microsoft C compiler
 Configure miss: OpenGL Utility library
 Configure miss: GLUT library
-Configure miss: sys/vmmeter.h usability
-Configure miss: sys/vmmeter.h presence
 Configure miss: sys/vmmeter.h
-Configure miss: procfs.h usability
-Configure miss: procfs.h presence
 Configure miss: procfs.h
-Configure miss: sal.h usability
-Configure miss: sal.h presence
 Configure miss: sal.h
-Configure miss: intrin.h usability
-Configure miss: intrin.h presence
 Configure miss: intrin.h
-Configure miss: avxintrin.h usability
-Configure miss: avxintrin.h presence
 Configure miss: avxintrin.h
+Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: whether xgetbv is declared
 Configure miss: whether __xgetbv is declared
 Configure miss: whether cpuid is declared
