@@ -4,7 +4,7 @@
 #
 Name     : boinc-client
 Version  : 7.16.16
-Release  : 25
+Release  : 26
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.16/7.16.16/boinc-7.16.16.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.16/7.16.16/boinc-7.16.16.tar.gz
 Source1  : boinc-client.tmpfiles
