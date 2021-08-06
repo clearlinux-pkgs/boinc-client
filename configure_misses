@@ -1,4 +1,6 @@
+Configure miss: CL/opencl.h
 Configure miss: GLUT library
+Configure miss: OpenCL/opencl.h
 Configure miss: OpenGL Utility library
 Configure miss: _configthreadlocale
 Configure miss: _strdup
@@ -19,8 +21,6 @@ Configure miss: nvapi.h
 Configure miss: procfs.h
 Configure miss: res_init
 Configure miss: res_init in -lresolv
-Configure miss: res_query in dynamic library resolv
-Configure miss: res_query in static library resolv
 Configure miss: sal.h
 Configure miss: shmget in dynamic library cygipc
 Configure miss: strdupa
