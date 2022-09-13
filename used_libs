@@ -1,7 +1,7 @@
 libX11.so.6
 libXss.so.1
 libc.so.6
-libcrypto.so.1.1
+libcrypto.so.3
 libcurl.so.4
 libgcc_s.so.1
 libglib-2.0.so.0
@@ -10,9 +10,9 @@ libgtk-3.so.0
 libm.so.6
 libnotify.so.4
 libstdc++.so.6
-libwx_baseu-3.1.so.5
-libwx_baseu_net-3.1.so.5
-libwx_gtk3u_core-3.1.so.5
-libwx_gtk3u_html-3.1.so.5
-libwx_gtk3u_webview-3.1.so.5
+libwx_baseu-3.2.so.0
+libwx_baseu_net-3.2.so.0
+libwx_gtk3u_core-3.2.so.0
+libwx_gtk3u_html-3.2.so.0
+libwx_gtk3u_webview-3.2.so.0
 libz.so.1

@@ -44,5 +44,6 @@ Configure miss: whether xgetbv is declared
 Configure miss: wxWidgets static library
 Configure miss: wxWidgets static library
 Configure miss: x86_64-generic-linux-gnu-CXX
+Configure miss: x86_64-generic-linux-gnu-file
 Configure miss: x86_64-generic-linux-gnu-objc++
 Configure miss: x86_64-generic-linux-gnu-objcxx
