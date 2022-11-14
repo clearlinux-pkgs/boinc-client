@@ -1,7 +1,7 @@
-From e87629adb4c7717e6b2d77ffc6da8efd5246f4b8 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Brett T. Warden" <brett.t.warden@intel.com>
 Date: Tue, 19 Feb 2019 16:53:32 -0800
-Subject: [PATCH 2/2] Add boinc-manager.desktop
+Subject: [PATCH] Add boinc-manager.desktop
 
 ---
  boinc-manager.desktop | 19 +++++++++++++++++++
@@ -33,6 +33,3 @@ index 0000000..84dd796
 +Comment[de]=BOINC Basis Client konfigurieren oder überwachen
 +Comment[pt]=Configurar ou monitorizar o cliente básico do BOINC
 +Comment[pt_BR]=Configure ou monitore o cliente básico do BOINC
--- 
-2.20.1
-
