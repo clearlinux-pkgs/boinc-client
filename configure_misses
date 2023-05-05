@@ -6,7 +6,6 @@ Configure miss: _configthreadlocale
 Configure miss: _strdup
 Configure miss: _strdupa
 Configure miss: aio_fork in dynamic library aio
-Configure miss: avxintrin.h
 Configure miss: bind in dynamic library socket
 Configure miss: bind in static library socket
 Configure miss: dynamic library nvapi
