@@ -4,10 +4,10 @@
 # Using build pattern: configure_ac
 #
 Name     : boinc-client
-Version  : 7.22.0
-Release  : 48
-URL      : https://github.com/BOINC/boinc/archive/client_release/7.22/7.22.0/boinc-7.22.0.tar.gz
-Source0  : https://github.com/BOINC/boinc/archive/client_release/7.22/7.22.0/boinc-7.22.0.tar.gz
+Version  : 7.22.1
+Release  : 49
+URL      : https://github.com/BOINC/boinc/archive/client_release/7.22/7.22.1/boinc-7.22.1.tar.gz
+Source0  : https://github.com/BOINC/boinc/archive/client_release/7.22/7.22.1/boinc-7.22.1.tar.gz
 Source1  : boinc-client.tmpfiles
 Summary  : Compression functions for BOINC applications
 Group    : Development/Tools
@@ -53,8 +53,6 @@ Stripchart version 2.0
 Author: Matt Lebofsky
 BOINC/SETI@home - University of California, Berkeley
 mattl@ssl.berkeley.edu
-
-Date of recent version: November 4, 2002
 
 %package bin
 Summary: bin components for the boinc-client package.
@@ -141,8 +139,8 @@ services components for the boinc-client package.
 
 
 %prep
-%setup -q -n boinc-client_release-7.22-7.22.0
-cd %{_builddir}/boinc-client_release-7.22-7.22.0
+%setup -q -n boinc-client_release-7.22-7.22.1
+cd %{_builddir}/boinc-client_release-7.22-7.22.1
 %patch1 -p1
 
 %build
@@ -150,7 +148,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683318864
+export SOURCE_DATE_EPOCH=1683916288
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -174,11 +172,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1683318864
+export SOURCE_DATE_EPOCH=1683916288
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYING %{buildroot}/usr/share/package-licenses/boinc-client/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYING.LESSER %{buildroot}/usr/share/package-licenses/boinc-client/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9 || :
+cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYING.LESSER %{buildroot}/usr/share/package-licenses/boinc-client/e203d4ef09d404fa5c03cf6590e44231665be689 || :
 cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYRIGHT %{buildroot}/usr/share/package-licenses/boinc-client/62512a302b5fc9d3f15ad8ae0775aecbf08f7b4d || :
 cp %{_builddir}/boinc-client_release-7.22-%{version}/api/ttf/liberation-fonts-ttf-2.00.0/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/0898cb73de9283d38e6f4cef45ce79efbfafb0b2 || :
 cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/all/libraries/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/4dbb477bdccb1d3b4fc6e73b899d1a287b199f98 || :
@@ -345,8 +343,8 @@ done
 /usr/include/boinc/average.h
 /usr/include/boinc/base64.h
 /usr/include/boinc/boinc_api.h
-/usr/include/boinc/boinc_fcgi.h
 /usr/include/boinc/boinc_opencl.h
+/usr/include/boinc/boinc_stdio.h
 /usr/include/boinc/cal_boinc.h
 /usr/include/boinc/cc_config.h
 /usr/include/boinc/cert_sig.h
@@ -394,9 +392,9 @@ done
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libboinc_api.so.7
-/usr/lib64/libboinc_api.so.7.22.0
+/usr/lib64/libboinc_api.so.7.22.1
 /usr/lib64/libboinc_opencl.so.7
-/usr/lib64/libboinc_opencl.so.7.22.0
+/usr/lib64/libboinc_opencl.so.7.22.1
 
 %files license
 %defattr(0644,root,root,0755)
@@ -411,7 +409,7 @@ done
 /usr/share/package-licenses/boinc-client/89ea22f8eed658271c62456bacc37b24a77173a4
 /usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529
 /usr/share/package-licenses/boinc-client/d156a1bf8185f65cd8b9d3c06fd011428d0214f5
-/usr/share/package-licenses/boinc-client/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
+/usr/share/package-licenses/boinc-client/e203d4ef09d404fa5c03cf6590e44231665be689
 
 %files man
 %defattr(0644,root,root,0755)
