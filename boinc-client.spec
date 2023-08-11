@@ -4,10 +4,10 @@
 # Using build pattern: configure_ac
 #
 Name     : boinc-client
-Version  : 7.22.2
-Release  : 52
-URL      : https://github.com/BOINC/boinc/archive/client_release/7.22/7.22.2/boinc-7.22.2.tar.gz
-Source0  : https://github.com/BOINC/boinc/archive/client_release/7.22/7.22.2/boinc-7.22.2.tar.gz
+Version  : 7.24.0
+Release  : 53
+URL      : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.0/boinc-7.24.0.tar.gz
+Source0  : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.0/boinc-7.24.0.tar.gz
 Source1  : boinc-client.tmpfiles
 Summary  : Compression functions for BOINC applications
 Group    : Development/Tools
@@ -139,16 +139,16 @@ services components for the boinc-client package.
 
 
 %prep
-%setup -q -n boinc-client_release-7.22-7.22.2
-cd %{_builddir}/boinc-client_release-7.22-7.22.2
-%patch1 -p1
+%setup -q -n boinc-client_release-7.24-7.24.0
+cd %{_builddir}/boinc-client_release-7.24-7.24.0
+%patch -P 1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684792440
+export SOURCE_DATE_EPOCH=1691789657
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -172,41 +172,41 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1684792440
+export SOURCE_DATE_EPOCH=1691789657
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
-cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYING %{buildroot}/usr/share/package-licenses/boinc-client/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYING.LESSER %{buildroot}/usr/share/package-licenses/boinc-client/e203d4ef09d404fa5c03cf6590e44231665be689 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/COPYRIGHT %{buildroot}/usr/share/package-licenses/boinc-client/62512a302b5fc9d3f15ad8ae0775aecbf08f7b4d || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/api/ttf/liberation-fonts-ttf-2.00.0/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/0898cb73de9283d38e6f4cef45ce79efbfafb0b2 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/all/libraries/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/4dbb477bdccb1d3b4fc6e73b899d1a287b199f98 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/all/libraries/phpmailer/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/d156a1bf8185f65cd8b9d3c06fd011428d0214f5 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/all/libraries/tinymce/jscripts/tiny_mce/license.txt %{buildroot}/usr/share/package-licenses/boinc-client/05ce47af4fb5f4f4a65b8f7f0a67e9935ff0ae70 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/all/themes/zen/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/bbcode/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/cck/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/ckeditor/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/content_profile/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/context/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/ctools/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/elysia_cron/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/facetapi/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/features/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/filefield/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/flag/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/forum_access/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/htmlpurifier/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/i18nviews/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/jump/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/panels/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/privatemsg/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/tableofcontents/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/views/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/contrib/wysiwyg/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/drupal/sites/default/boinc/modules/node_comment_block/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/html/inc/random_compat/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/89ea22f8eed658271c62456bacc37b24a77173a4 || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/mac_installer/License.rtf %{buildroot}/usr/share/package-licenses/boinc-client/857cfa94afe9fb9b3e73cfb170c1d94155aaf94a || :
-cp %{_builddir}/boinc-client_release-7.22-%{version}/samples/wrappture/license.terms %{buildroot}/usr/share/package-licenses/boinc-client/3fad046d74e3ba1138e908e168a325e6a14b8ac0 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/COPYING %{buildroot}/usr/share/package-licenses/boinc-client/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/COPYING.LESSER %{buildroot}/usr/share/package-licenses/boinc-client/e203d4ef09d404fa5c03cf6590e44231665be689 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/COPYRIGHT %{buildroot}/usr/share/package-licenses/boinc-client/62512a302b5fc9d3f15ad8ae0775aecbf08f7b4d || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/api/ttf/liberation-fonts-ttf-2.00.0/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/0898cb73de9283d38e6f4cef45ce79efbfafb0b2 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/all/libraries/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/4dbb477bdccb1d3b4fc6e73b899d1a287b199f98 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/all/libraries/phpmailer/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/d156a1bf8185f65cd8b9d3c06fd011428d0214f5 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/all/libraries/tinymce/jscripts/tiny_mce/license.txt %{buildroot}/usr/share/package-licenses/boinc-client/05ce47af4fb5f4f4a65b8f7f0a67e9935ff0ae70 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/all/themes/zen/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/bbcode/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/cck/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/ckeditor/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/content_profile/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/context/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/ctools/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/elysia_cron/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/facetapi/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/features/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/filefield/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/flag/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/forum_access/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/htmlpurifier/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/i18nviews/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/jump/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/panels/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/privatemsg/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/tableofcontents/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/views/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/contrib/wysiwyg/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/919ebd0505421520215536126e8dee39fc1ef529 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/drupal/sites/default/boinc/modules/node_comment_block/LICENSE.txt %{buildroot}/usr/share/package-licenses/boinc-client/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/html/inc/random_compat/LICENSE %{buildroot}/usr/share/package-licenses/boinc-client/89ea22f8eed658271c62456bacc37b24a77173a4 || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/mac_installer/License.rtf %{buildroot}/usr/share/package-licenses/boinc-client/857cfa94afe9fb9b3e73cfb170c1d94155aaf94a || :
+cp %{_builddir}/boinc-client_release-7.24-%{version}/samples/wrappture/license.terms %{buildroot}/usr/share/package-licenses/boinc-client/3fad046d74e3ba1138e908e168a325e6a14b8ac0 || :
 %make_install
 %find_lang BOINC-Client
 %find_lang BOINC-Manager
@@ -392,9 +392,9 @@ done
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libboinc_api.so.7
-/usr/lib64/libboinc_api.so.7.22.2
+/usr/lib64/libboinc_api.so.7.24.0
 /usr/lib64/libboinc_opencl.so.7
-/usr/lib64/libboinc_opencl.so.7.22.2
+/usr/lib64/libboinc_opencl.so.7.24.0
 
 %files license
 %defattr(0644,root,root,0755)
