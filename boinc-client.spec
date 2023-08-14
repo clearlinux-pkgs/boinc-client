@@ -4,10 +4,10 @@
 # Using build pattern: configure_ac
 #
 Name     : boinc-client
-Version  : 7.24.0
-Release  : 53
-URL      : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.0/boinc-7.24.0.tar.gz
-Source0  : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.0/boinc-7.24.0.tar.gz
+Version  : 7.24.1
+Release  : 54
+URL      : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.1/boinc-7.24.1.tar.gz
+Source0  : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.1/boinc-7.24.1.tar.gz
 Source1  : boinc-client.tmpfiles
 Summary  : Compression functions for BOINC applications
 Group    : Development/Tools
@@ -139,8 +139,8 @@ services components for the boinc-client package.
 
 
 %prep
-%setup -q -n boinc-client_release-7.24-7.24.0
-cd %{_builddir}/boinc-client_release-7.24-7.24.0
+%setup -q -n boinc-client_release-7.24-7.24.1
+cd %{_builddir}/boinc-client_release-7.24-7.24.1
 %patch -P 1 -p1
 
 %build
@@ -148,7 +148,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1691789657
+export SOURCE_DATE_EPOCH=1692026933
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -172,7 +172,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1691789657
+export SOURCE_DATE_EPOCH=1692026933
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp %{_builddir}/boinc-client_release-7.24-%{version}/COPYING %{buildroot}/usr/share/package-licenses/boinc-client/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -392,9 +392,9 @@ done
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libboinc_api.so.7
-/usr/lib64/libboinc_api.so.7.24.0
+/usr/lib64/libboinc_api.so.7.24.1
 /usr/lib64/libboinc_opencl.so.7
-/usr/lib64/libboinc_opencl.so.7.24.0
+/usr/lib64/libboinc_opencl.so.7.24.1
 
 %files license
 %defattr(0644,root,root,0755)
