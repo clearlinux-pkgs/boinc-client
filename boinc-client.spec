@@ -5,7 +5,7 @@
 #
 Name     : boinc-client
 Version  : 7.24.1
-Release  : 54
+Release  : 55
 URL      : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.1/boinc-7.24.1.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/7.24/7.24.1/boinc-7.24.1.tar.gz
 Source1  : boinc-client.tmpfiles
