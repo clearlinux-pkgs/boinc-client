@@ -1,48 +1,98 @@
 Configure miss: CL/opencl.h
+Configure miss: CL/opencl.h
+Configure miss: GLUT library
 Configure miss: GLUT library
 Configure miss: OpenCL/opencl.h
+Configure miss: OpenCL/opencl.h
+Configure miss: OpenGL Utility library
 Configure miss: OpenGL Utility library
 Configure miss: _configthreadlocale
+Configure miss: _configthreadlocale
+Configure miss: _strdup
 Configure miss: _strdup
 Configure miss: _strdupa
+Configure miss: _strdupa
+Configure miss: aio_fork in dynamic library aio
 Configure miss: aio_fork in dynamic library aio
 Configure miss: bind in dynamic library socket
+Configure miss: bind in dynamic library socket
+Configure miss: bind in static library socket
 Configure miss: bind in static library socket
 Configure miss: dynamic library nvapi
+Configure miss: dynamic library nvapi
 Configure miss: g++ option to enable C++11 features
+Configure miss: g++ option to enable C++11 features
+Configure miss: gcc option to enable large file support
+Configure miss: gcc option to enable large file support
+Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gethostbyname in dynamic library nsl
+Configure miss: gethostbyname in dynamic library nsl
+Configure miss: gethostbyname in static library nsl
 Configure miss: gethostbyname in static library nsl
 Configure miss: getisax
+Configure miss: getisax
+Configure miss: intrin.h
 Configure miss: intrin.h
 Configure miss: md5_finish in dynamic library cups
+Configure miss: md5_finish in dynamic library cups
+Configure miss: nvapi.h
 Configure miss: nvapi.h
 Configure miss: procfs.h
+Configure miss: procfs.h
+Configure miss: res_init
 Configure miss: res_init
 Configure miss: res_init in -lresolv
+Configure miss: res_init in -lresolv
+Configure miss: sal.h
 Configure miss: sal.h
 Configure miss: shmget in dynamic library cygipc
+Configure miss: shmget in dynamic library cygipc
+Configure miss: strdupa
 Configure miss: strdupa
 Configure miss: struct lifconf
+Configure miss: struct lifconf
+Configure miss: struct lifreq
 Configure miss: struct lifreq
 Configure miss: sys/sensors.h
+Configure miss: sys/sensors.h
+Configure miss: sys/sysctl.h
 Configure miss: sys/sysctl.h
 Configure miss: sys/vmmeter.h
+Configure miss: sys/vmmeter.h
+Configure miss: whether /usr/lib64/ccache/bin/g++ accepts -g
 Configure miss: whether /usr/lib64/ccache/bin/g++ accepts -g
 Configure miss: whether __cpuid is declared
+Configure miss: whether __cpuid is declared
+Configure miss: whether __xgetbv is declared
 Configure miss: whether __xgetbv is declared
 Configure miss: whether _cpuid is declared
+Configure miss: whether _cpuid is declared
+Configure miss: whether _fpreset is declared
 Configure miss: whether _fpreset is declared
 Configure miss: whether cpuid is declared
+Configure miss: whether cpuid is declared
+Configure miss: whether fpreset is declared
 Configure miss: whether fpreset is declared
 Configure miss: whether largefile support breaks C++
+Configure miss: whether largefile support breaks C++
+Configure miss: whether the compiler supports GNU Objective C++
 Configure miss: whether the compiler supports GNU Objective C++
 Configure miss: whether we are compiling for cygwin
+Configure miss: whether we are compiling for cygwin
 Configure miss: whether we are using the Microsoft C compiler
+Configure miss: whether we are using the Microsoft C compiler
+Configure miss: whether xgetbv is declared
 Configure miss: whether xgetbv is declared
 Configure miss: wxWidgets static library
 Configure miss: wxWidgets static library
+Configure miss: wxWidgets static library
+Configure miss: wxWidgets static library
+Configure miss: x86_64-generic-linux-gnu-CXX
 Configure miss: x86_64-generic-linux-gnu-CXX
 Configure miss: x86_64-generic-linux-gnu-file
+Configure miss: x86_64-generic-linux-gnu-file
 Configure miss: x86_64-generic-linux-gnu-objc++
+Configure miss: x86_64-generic-linux-gnu-objc++
+Configure miss: x86_64-generic-linux-gnu-objcxx
 Configure miss: x86_64-generic-linux-gnu-objcxx
