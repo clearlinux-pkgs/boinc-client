@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : boinc-client
 Version  : 8.0.2
-Release  : 60
+Release  : 61
 URL      : https://github.com/BOINC/boinc/archive/client_release/8.0/8.0.2/boinc-8.0.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/8.0/8.0.2/boinc-8.0.2.tar.gz
 Source1  : boinc-client.tmpfiles
@@ -163,7 +163,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1720048713
+export SOURCE_DATE_EPOCH=1720052871
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -225,7 +225,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1720048713
+export SOURCE_DATE_EPOCH=1720052871
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/boinc-client
 cp %{_builddir}/boinc-client_release-8.0-%{version}/COPYING %{buildroot}/usr/share/package-licenses/boinc-client/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -447,7 +447,9 @@ done
 /usr/include/boinc/url.h
 /usr/include/boinc/util.h
 /usr/include/boinc/version.h
+/usr/lib64/libboinc.a
 /usr/lib64/libboinc_api.so
+/usr/lib64/libboinc_crypt.a
 /usr/lib64/libboinc_opencl.so
 /usr/lib64/pkgconfig/libboinc.pc
 /usr/lib64/pkgconfig/libboinc_api.pc
@@ -490,9 +492,7 @@ done
 
 %files staticdev
 %defattr(-,root,root,-)
-/usr/lib64/libboinc.a
 /usr/lib64/libboinc_api.a
-/usr/lib64/libboinc_crypt.a
 /usr/lib64/libboinc_opencl.a
 
 %files locales -f BOINC-Client.lang -f BOINC-Manager.lang
