@@ -1,4 +1,5 @@
 # This file contains additional pkgconfig build requirements that did
 # not get picked up automatically. One name per line, no whitespace.
+OpenCL
 gtk+-3.0
 libcurl
