@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : boinc-client
 Version  : 8.0.2
-Release  : 68
+Release  : 69
 URL      : https://github.com/BOINC/boinc/archive/client_release/8.0/8.0.2/boinc-8.0.2.tar.gz
 Source0  : https://github.com/BOINC/boinc/archive/client_release/8.0/8.0.2/boinc-8.0.2.tar.gz
 Source1  : boinc-client.tmpfiles
